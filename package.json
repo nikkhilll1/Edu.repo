@@ -1,0 +1,22 @@
+{
+  "name": "studysync-website",
+  "version": "1.0.0",
+  "description": "StudySync - Seamless Learning For Brighter Futures",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "education",
+    "learning",
+    "website",
+    "studysync"
+  ],
+  "author": "StudySync Team",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^latest"
+  }
+}
