@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - StudySync</title>
+    <link rel="stylesheet" href="Studysync.css" />
+    <link
+      rel="shortcut icon"
+      href="./Images/StudySyn (1).svg"
+      type="image/x-icon"
+     />
+    
+
+    <style>
+      .contact-container {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .contact-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      .contact-header {
+        margin-bottom: 30px;
+      }
+
+      .contact-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+      }
+
+      .contact-title {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .contact-subtitle {
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-group {
+        text-align: left;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+        box-sizing: border-box;
+      }
+
+             .form-input:focus {
+         outline: none;
+         border-color: #667eea;
+       }
+       
+       .form-input[rows] {
+         resize: vertical;
+         min-height: 100px;
+         font-family: inherit;
+       }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .back-btn {
+        background: #f8f9fa;
+        color: #333;
+        border: 2px solid #e1e5e9;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .back-btn:hover {
+        background: #e9ecef;
+        border-color: #adb5bd;
+      }
+
+      .success-message {
+        background: #d4edda;
+        color: #155724;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        display: none;
+      }
+
+      .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        display: none;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="contact-container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <img
+            src="./Images/StudySyn (1).svg"
+            alt="StudySync Logo"
+            class="contact-logo"
+          />
+          <h1 class="contact-title">Contact Us</h1>
+          <p class="contact-subtitle">Get in touch with our team</p>
+        </div>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          onsubmit="submitContactForm(event)"
+        >
+          <div class="form-group">
+            <label for="firstName" class="form-label">First Name *</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="form-label">Last Name *</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              required
+            />
+          </div>
+
+                     <div class="form-group">
+             <label for="message" class="form-label">Message *</label>
+             <textarea
+               id="message"
+               name="message"
+               class="form-input"
+               rows="4"
+               placeholder="Enter your message here..."
+               required
+             ></textarea>
+           </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Send Message
+          </button>
+        </form>
+
+        <div id="successMessage" class="success-message">
+          Thank you! Your message has been sent successfully.
+        </div>
+
+        <div id="errorMessage" class="error-message">
+          There was an error sending your message. Please try again.
+        </div>
+
+        
+
+        <a href="StudySync.html" class="back-btn">← Back to Home</a>
+      </div>
+    </div>
+         <script type="text/javascript"
+         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+     </script>
+     <script>
+       // Initialize EmailJS
+       const EMAILJS_CONFIG = {
+         serviceId: "service_ecmqtvl",
+         templateId: "template_kwievp4", 
+         userId: "qNR8TslGcg3kvp4_W",
+         recipientEmail: "baliyan9639@gmail.com"
+       };
+
+       // Initialize EmailJS when page loads
+       (function () {
+         emailjs.init(EMAILJS_CONFIG.userId);
+         console.log('EmailJS initialized with user ID:', EMAILJS_CONFIG.userId);
+       })();
+
+      function submitContactForm(event) {
+        event.preventDefault();
+
+                 // Get form data
+         const firstName = document.getElementById("firstName").value.trim();
+         const lastName = document.getElementById("lastName").value.trim();
+         const email = document.getElementById("email").value.trim();
+         const message = document.getElementById("message").value.trim();
+
+         // Basic validation
+         if (!firstName || !lastName || !email || !message) {
+           showMessage("error", "Please fill in all required fields.");
+           return;
+         }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showMessage("error", "Please enter a valid email address.");
+          return;
+        }
+
+                 // Check if EmailJS is properly configured
+         if (
+           !EMAILJS_CONFIG.serviceId ||
+           EMAILJS_CONFIG.serviceId === "YOUR_SERVICE_ID" ||
+           !EMAILJS_CONFIG.templateId ||
+           EMAILJS_CONFIG.templateId === "YOUR_TEMPLATE_ID" ||
+           !EMAILJS_CONFIG.userId ||
+           EMAILJS_CONFIG.userId === "YOUR_USER_ID"
+         ) {
+           showMessage(
+             "error",
+             "EmailJS is not configured. Please check the setup instructions."
+           );
+           return;
+         }
+
+         // Send email using EmailJS
+         sendEmailWithEmailJS(firstName, lastName, email, message);
+      }
+
+             function sendEmailWithEmailJS(firstName, lastName, email, message) {
+         // Show loading state
+         const submitBtn = document.getElementById("submitBtn");
+         const originalText = submitBtn.textContent;
+         submitBtn.textContent = "Sending...";
+         submitBtn.disabled = true;
+
+                   // Prepare template parameters - adjust these to match your EmailJS template
+          const templateParams = {
+            to_name: "StudySync Team",
+            to_email: EMAILJS_CONFIG.recipientEmail,
+            from_name: `${firstName} ${lastName}`,
+            from_email: email,
+            user_message: message,
+            message: `New contact form submission from StudySync website.`,
+            first_name: firstName,
+            last_name: lastName,
+            subject: "New Contact Form Submission - StudySync"
+          };
+
+         console.log('Sending email with params:', templateParams);
+         console.log('Using service:', EMAILJS_CONFIG.serviceId);
+         console.log('Using template:', EMAILJS_CONFIG.templateId);
+
+         // Send email using EmailJS v3
+         emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+           .then(function(response) {
+             console.log("SUCCESS!", response.status, response.text);
+             showMessage("success", "Thank you! Your message has been sent successfully.");
+             document.getElementById("contactForm").reset();
+           })
+           .catch(function(error) {
+             console.error("FAILED...", error);
+             console.error("Error details:", {
+               status: error.status,
+               text: error.text,
+               message: error.message
+             });
+             showMessage("error", `Failed to send message: ${error.text || error.message}`);
+           })
+           .finally(function() {
+             // Reset button
+             submitBtn.textContent = originalText;
+             submitBtn.disabled = false;
+           });
+       }
+
+      function showMessage(type, message) {
+        const successMsg = document.getElementById("successMessage");
+        const errorMsg = document.getElementById("errorMessage");
+
+        if (type === "success") {
+          successMsg.style.display = "block";
+          errorMsg.style.display = "none";
+          successMsg.textContent = message;
+        } else {
+          errorMsg.style.display = "block";
+          successMsg.style.display = "none";
+          errorMsg.textContent = message;
+        }
+
+        // Auto-hide messages after 5 seconds
+        setTimeout(() => {
+          successMsg.style.display = "none";
+          errorMsg.style.display = "none";
+        }, 5000);
+      }
+
+      
+
+             // Check if EmailJS is loaded
+       window.addEventListener("load", function () {
+         if (typeof emailjs === "undefined") {
+           showMessage(
+             "error",
+             "EmailJS failed to load. Please check your internet connection."
+           );
+         } else {
+           console.log('EmailJS loaded successfully');
+           // Test EmailJS connection
+           testEmailJSConnection();
+         }
+       });
+
+       // Test EmailJS connection
+       function testEmailJSConnection() {
+         console.log('Testing EmailJS connection...');
+         console.log('Service ID:', EMAILJS_CONFIG.serviceId);
+         console.log('Template ID:', EMAILJS_CONFIG.templateId);
+         console.log('User ID:', EMAILJS_CONFIG.userId);
+         
+         // Test if EmailJS is properly initialized
+         try {
+           emailjs.init(EMAILJS_CONFIG.userId);
+           console.log('EmailJS initialized successfully');
+         } catch (error) {
+           console.error('EmailJS initialization failed:', error);
+         }
+       }
+     </script>
+   </body>
+ </html>
