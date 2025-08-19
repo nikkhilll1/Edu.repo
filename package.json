@@ -2,7 +2,7 @@
   "name": "studysync-website",
   "version": "1.0.0",
   "description": "StudySync - Seamless Learning For Brighter Futures",
-  "main": "index.html",
+  "main": "StudySync.html",
   "scripts": {
     "start": "npx serve .",
     "build": "echo 'Static site - no build required'",
@@ -14,7 +14,7 @@
     "website",
     "studysync"
   ],
-  "author": "StudySync Team",
+  "author": "Nikhil Baliyan",
   "license": "MIT",
   "devDependencies": {
     "vercel": "^latest"
