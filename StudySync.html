@@ -6,7 +6,6 @@
     <title>StudySync</title>
     <link rel="stylesheet" href="Studysync.css">
     <link rel="shortcut icon" href="./Images/StudySyn (1).svg" type="image/x-icon">
-    
     <script src="Studysync.js"></script>
 </head>
 <body class="body_container">
@@ -260,16 +259,16 @@
                 <p class="filler_text">Seamless Learning For Brighter Futures</p>
                </div>
                <div class="socials">
-                <a href="https://www.instagram.com" target="_blank">
+                <a href="https://www.instagram.com/?flo=true" target="_blank">
                     <img src="./Images/instagram.svg" class="Social_logo" />
                 </a>
-                <a href="https://twitter.com" target="_blank">
+                <a href="https://x.com/?logout=1755577663995" target="_blank">
                     <img src="./Images/twitter.svg" class="Social_logo"/>
                 </a>
-                <a href="https://www.linkedin.com" target="_blank">
+                <a href="https://www.linkedin.com/in/nikkhilll1/" target="_blank">
                     <img src="./Images/linkedin (1).svg" class="Social_logo"/>
                 </a>
-                <a href="https://github.com" target="_blank">
+                <a href="https://github.com/dashboard" target="_blank">
                     <img src="./Images/github.svg" class="Social_logo"/>
                 </a>
                </div>
@@ -329,71 +328,6 @@
             © 2021 - Present StudySync. All rights reserved.
         </div>
     </div>
-    <script>
-        function openNewWindow(url) {
-            // Open the URL in a new window/tab     
-            if (url) {
-                window.open(url, '_blank', 'noopener,noreferrer');
-            }
-        }
-        
-        // Email validation and newsletter submission
-        function validateAndSubmit(event) {
-            event.preventDefault();
-            
-            const emailInput = document.getElementById('newsletterEmail');
-            const email = emailInput.value.trim();
-            
-            // Basic email validation
-            if (!email) {
-                alert('Please enter an email address');
-                emailInput.focus();
-                return false;
-            }
-            
-            // Email format validation using regex
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-                emailInput.focus();
-                return false;
-            }
-            
-            // If validation passes, show success message
-            alert('Thanks for mailing!');
-            
-            // Clear the form
-            emailInput.value = '';
-            
-            return false;
-        }
-        
-        // Alternative function to handle button click directly
-        function handleNewsletterSubmit() {
-            const emailInput = document.getElementById('newsletterEmail');
-            const email = emailInput.value.trim();
-            
-            // Basic email validation
-            if (!email) {
-                alert('Please enter an email address');
-                emailInput.focus();
-                return;
-            }
-            
-            // Email format validation using regex
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-                emailInput.focus();
-                return;
-            }
-            
-            // If validation passes, show success message
-            alert('Thanks for mailing!');
-            
-            // Clear the form
-            emailInput.value = '';
-        }
-    </script>
+   <script src="Studysync.js"></script>
 </body>
 </html>
